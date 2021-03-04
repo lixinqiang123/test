@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fh.api.dao.UserDao">
+
+        <select id="queryCount" resultType="java.lang.Long">
+            select count(*) from user
+        </select>
+
+        <!--查询进行分页后的数据-->
+        <select id="queryUser" resultType="com.fh.api.entity.po.User">
+            select * from user limit #{startIndex},#{size}
+        </select>
+</mapper>
